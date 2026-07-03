@@ -9,7 +9,7 @@ from telegram.ext import (
     ContextTypes,
 )
 
-bot_token = "8998347779:AAFkL10TCqPvYCh2mMiulIMxL67Me3iRra8"
+bot_token = ""
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [[InlineKeyboardButton("点我", callback_data="btn_1")]]
@@ -34,7 +34,7 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await query.edit_message_text(f"你按了：{query.data}")
 
 def main():
-    token =bot_token
+    token=os.getenv('BOT_TOKEN')
     if not token:
         print("BOT_TOKEN is None")
         return
