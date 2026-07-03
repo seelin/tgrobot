@@ -34,6 +34,10 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 def main():
     #token=bot_token
     token = os.getenv("BOT_TOKEN")
+    
+    if not token:
+        token= os.environ.get('BOT_TOKEN')
+        
     if not token:
         print("BOT_TOKEN is None")
         return
