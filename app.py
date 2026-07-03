@@ -71,8 +71,7 @@ def run_bot(token: str):
     app.add_handler(CallbackQueryHandler(button_handler))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, echo))
     logging.info("Telegram bot: starting polling...")
-    app.run_polling()  # 阻塞，放在线程中运行
-
+    app.run_polling(stop_signals=None, close_loop=False))  # 阻塞，放在线程中运行
 # Flask app 提供状态查询
 flask_app = Flask(__name__)
 
