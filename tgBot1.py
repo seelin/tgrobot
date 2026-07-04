@@ -12,7 +12,7 @@ from telegram.ext import (
 bot_token = ""
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    keyboard = [[InlineKeyboardButton("知道了", callback_data="yes")],[InlineKeyboardButton("好吧", callback_data="no")]]
+    keyboard = [[InlineKeyboardButton("知道了", callback_data="yes"),InlineKeyboardButton("好吧", callback_data="no")]]
     await update.message.reply_text(
         "你好！我是你的机器人。发送任意文字我会原样回复。", reply_markup=InlineKeyboardMarkup(keyboard)
     )
